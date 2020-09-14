@@ -17,7 +17,7 @@ public class FakePersonDataAccessService implements PersonDao{
 
     @Override
     public int insertPerson(UUID id, Person person) {
-        DB.add(new Person(id, person.getName(),person.getEmail(),person.getAdres()));
+        DB.add(new Person(id, person.getName(),person.getEmail(),person.getAdres(),person.getCountry()));
         return 1;
     }
 
@@ -49,7 +49,7 @@ public class FakePersonDataAccessService implements PersonDao{
                .map(person -> {
                    int indexOfPersonToDelete = DB.indexOf(person);
                    if(indexOfPersonToDelete>=0){
-                       DB.set(indexOfPersonToDelete,new Person(id,update.getName(),update.getEmail(),update.getAdres()));
+                       DB.set(indexOfPersonToDelete,new Person(id,update.getName(),update.getEmail(),update.getAdres(), update.getCountry()));
                     return 1;
                    }else
                        return 0;

@@ -19,12 +19,15 @@ public class Person {
     private final String email;
 
     private final String adres;
+    
+    private final String country;
 
-    public Person(@JsonProperty("id") UUID id,@JsonProperty("name") String name,String email,String adres) {
+    public Person(@JsonProperty("id") UUID id,@JsonProperty("name") String name,String email,String adres,String country) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.adres = adres;
+        this.country = country;
     }
 
     public UUID getId() {
